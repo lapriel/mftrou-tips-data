@@ -1,0 +1,24 @@
+name: Refresh TIPS ladder data
+on:
+  schedule:
+    - cron: "40 22 * * 1-5"   # weekdays 6:40 pm Eastern (22:40 UTC), after Treasury posts the day's yield curve
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Refresh data
+        run: python3 tips_ladder_data.py
+      - name: Commit results
+        run: |
+          git config user.name "mftrou-data bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add tips_ladder_data.json
+          git diff --cached --quiet || git commit -m "TIPS ladder data $(date -u +%Y-%m-%d)"
+          git push
