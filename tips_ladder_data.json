@@ -3,8 +3,10 @@
  "settlement": "2026-09-30",
  "refCpiSettlement": 333.91913,
  "yieldsAsOf": "09/28/2026",
- "yieldNote": "Treasury par real yield curve (5-30 yr) as of 09/28/2026; 2-4 yr from the Federal Reserve Board fitted TIPS curve (2026-09-18), shifted to the Treasury 5-year level.",
+ "yieldNote": "Treasury par real yield curve (5-30 yr) as of 09/28/2026; 2-4 yr from the Federal Reserve Board fitted TIPS curve (2026-09-18), shifted to the Treasury 5-year level. Under 2 yr: Treasury nominal 6-month and 1-year yields (09/28/2026) less the Fed 2-year breakeven inflation rate (2.25%).",
  "curve": {
+  "0.5": 2.16,
+  "1": 2.34,
   "2": 2.72,
   "3": 2.71,
   "4": 2.71,
