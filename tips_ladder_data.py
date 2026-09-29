@@ -98,8 +98,10 @@ def main():
             pass
     if not fcurve:  # last resort: flat at the 5-year
         fcurve = {2: tcurve[5], 3: tcurve[5], 4: tcurve[5], 5: tcurve[5]}; fdate = "unavailable; 2-4 yr set equal to the 5-year"
-    shift = tcurve[5] - fcurve[5]
-    curve = {2: round(fcurve[2] + shift, 2), 3: round(fcurve[3] + shift, 2), 4: round(fcurve[4] + shift, 2), **tcurve}
+    # 2-4 years: straight-line interpolation between the 1-year point (below) and Treasury's 5-year.
+    # (The Fed fitted curve is only used for its breakeven figure; checked Sept 29, 2026: the shifted Fed
+    # shape overstated the 3-year by ~16 bp against broker quotes, interpolation was within 2 bp.)
+    curve = dict(tcurve)
 
     # Short end (under 2 years): real yield = Treasury nominal par yield (6 mo, 1 yr) minus the Fed's 2-year
     # breakeven inflation. Checked Sept 29, 2026 against broker quotes: within a few bp.
@@ -114,7 +116,7 @@ def main():
         bk = float(fed_vals.get("BKEVEN02")) if fed_vals and fed_vals.get("BKEVEN02") not in (None, "", "NA") else None
         if bk is not None and n6 is not None and n12 is not None:
             curve = {0.5: round(n6 - bk, 2), 1: round(n12 - bk, 2), **curve}
-            short_note = f" Under 2 yr: Treasury nominal 6-month and 1-year yields ({nrow['Date']}) less the Fed 2-year breakeven inflation rate ({bk:.2f}%)."
+            short_note = f" Under 5 yr: Treasury nominal 6-month and 1-year yields ({nrow['Date']}) less the Fed 2-year breakeven inflation rate ({bk:.2f}%), interpolated to the 5-year."
     except Exception:
         pass
 
@@ -134,7 +136,7 @@ def main():
 
     out = dict(dataAsOf=date.today().isoformat(), settlement=settle.isoformat(), refCpiSettlement=round(ref, 5),
                yieldsAsOf=tdate,
-               yieldNote=f"Treasury par real yield curve (5-30 yr) as of {tdate}; 2-4 yr from the Federal Reserve Board fitted TIPS curve ({fdate}), shifted to the Treasury 5-year level." + short_note,
+               yieldNote=f"Treasury par real yield curve (5-30 yr) as of {tdate}." + short_note,
                curve={str(k): v for k, v in curve.items()},
                selectionRule="Each income year is funded by the TIPS maturing between the previous October and that January with the lowest index ratio (the 5-year issue where one exists); otherwise the earliest maturity in the year. Bonds maturing within 60 days of settlement are skipped.",
                ladder=[dict(year=y, **byyear[y]) for y in sorted(byyear)], allBonds=list(bonds))
