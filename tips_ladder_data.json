@@ -1,17 +1,17 @@
 {
- "dataAsOf": "2026-09-30",
- "settlement": "2026-10-01",
- "refCpiSettlement": 333.918,
- "yieldsAsOf": "09/30/2026",
- "yieldNote": "Treasury par real yield curve (5-30 yr) as of 09/30/2026. Under 5 yr: Treasury nominal 6-month and 1-year yields (09/30/2026) less the Fed 2-year breakeven inflation rate (2.27%), interpolated to the 5-year.",
+ "dataAsOf": "2026-10-01",
+ "settlement": "2026-10-02",
+ "refCpiSettlement": 333.95226,
+ "yieldsAsOf": "10/01/2026",
+ "yieldNote": "Treasury par real yield curve (5-30 yr) as of 10/01/2026. Under 5 yr: Treasury nominal 6-month and 1-year yields (10/01/2026) less the Fed 2-year breakeven inflation rate (2.27%), interpolated to the 5-year.",
  "curve": {
-  "0.5": 2.06,
-  "1": 2.27,
-  "5": 2.73,
-  "7": 2.82,
-  "10": 2.93,
-  "20": 3.18,
-  "30": 3.33
+  "0.5": 2.0,
+  "1": 2.17,
+  "5": 2.65,
+  "7": 2.76,
+  "10": 2.88,
+  "20": 3.16,
+  "30": 3.31
  },
  "selectionRule": "Each income year is funded by the TIPS maturing between the previous October and that January with the lowest index ratio (the 5-year issue where one exists); otherwise the earliest maturity in the year. Bonds maturing within 60 days of settlement are skipped.",
  "ladder": [
@@ -25,7 +25,7 @@
    "refCpi": 241.55919,
    "name": "0.375% TIPS of January 2027",
    "issued": "2017",
-   "indexRatio": 1.38234
+   "indexRatio": 1.38249
   },
   {
    "year": 2028,
@@ -37,7 +37,7 @@
    "refCpi": 296.22858,
    "name": "1.625% TIPS of October 2027",
    "issued": "2022",
-   "indexRatio": 1.12723
+   "indexRatio": 1.12735
   },
   {
    "year": 2029,
@@ -49,7 +49,7 @@
    "refCpi": 306.2939,
    "name": "2.375% TIPS of October 2028",
    "issued": "2023",
-   "indexRatio": 1.09019
+   "indexRatio": 1.0903
   },
   {
    "year": 2030,
@@ -61,7 +61,7 @@
    "refCpi": 314.65561,
    "name": "1.625% TIPS of October 2029",
    "issued": "2024",
-   "indexRatio": 1.06122
+   "indexRatio": 1.06133
   },
   {
    "year": 2031,
@@ -73,7 +73,7 @@
    "refCpi": 323.4671,
    "name": "1.125% TIPS of October 2030",
    "issued": "2025",
-   "indexRatio": 1.03231
+   "indexRatio": 1.03241
   },
   {
    "year": 2032,
@@ -85,7 +85,7 @@
    "refCpi": 277.20274,
    "name": "0.125% TIPS of January 2032",
    "issued": "2022",
-   "indexRatio": 1.2046
+   "indexRatio": 1.20472
   },
   {
    "year": 2033,
@@ -97,7 +97,7 @@
    "refCpi": 297.87606,
    "name": "1.125% TIPS of January 2033",
    "issued": "2023",
-   "indexRatio": 1.121
+   "indexRatio": 1.12111
   },
   {
    "year": 2034,
@@ -109,7 +109,7 @@
    "refCpi": 307.391,
    "name": "1.750% TIPS of January 2034",
    "issued": "2024",
-   "indexRatio": 1.0863
+   "indexRatio": 1.08641
   },
   {
    "year": 2035,
@@ -121,7 +121,7 @@
    "refCpi": 315.58677,
    "name": "2.125% TIPS of January 2035",
    "issued": "2025",
-   "indexRatio": 1.05809
+   "indexRatio": 1.05819
   },
   {
    "year": 2036,
@@ -133,7 +133,7 @@
    "refCpi": 324.93471,
    "name": "1.875% TIPS of January 2036",
    "issued": "2026",
-   "indexRatio": 1.02765
+   "indexRatio": 1.02775
   },
   {
    "year": 2040,
@@ -145,7 +145,7 @@
    "refCpi": 216.1395,
    "name": "2.125% TIPS of February 2040",
    "issued": "2010",
-   "indexRatio": 1.54492
+   "indexRatio": 1.54508
   },
   {
    "year": 2041,
@@ -157,7 +157,7 @@
    "refCpi": 218.991,
    "name": "2.125% TIPS of February 2041",
    "issued": "2011",
-   "indexRatio": 1.5248
+   "indexRatio": 1.52496
   },
   {
    "year": 2042,
@@ -169,7 +169,7 @@
    "refCpi": 225.96062,
    "name": "0.750% TIPS of February 2042",
    "issued": "2012",
-   "indexRatio": 1.47777
+   "indexRatio": 1.47792
   },
   {
    "year": 2043,
@@ -181,7 +181,7 @@
    "refCpi": 229.911,
    "name": "0.625% TIPS of February 2043",
    "issued": "2013",
-   "indexRatio": 1.45238
+   "indexRatio": 1.45253
   },
   {
    "year": 2044,
@@ -193,7 +193,7 @@
    "refCpi": 233.059,
    "name": "1.375% TIPS of February 2044",
    "issued": "2014",
-   "indexRatio": 1.43276
+   "indexRatio": 1.43291
   },
   {
    "year": 2045,
@@ -205,7 +205,7 @@
    "refCpi": 235.4815,
    "name": "0.750% TIPS of February 2045",
    "issued": "2015",
-   "indexRatio": 1.41802
+   "indexRatio": 1.41817
   },
   {
    "year": 2046,
@@ -217,7 +217,7 @@
    "refCpi": 236.94448,
    "name": "1.000% TIPS of February 2046",
    "issued": "2016",
-   "indexRatio": 1.40927
+   "indexRatio": 1.40941
   },
   {
    "year": 2047,
@@ -229,7 +229,7 @@
    "refCpi": 241.3925,
    "name": "0.875% TIPS of February 2047",
    "issued": "2017",
-   "indexRatio": 1.3833
+   "indexRatio": 1.38344
   },
   {
    "year": 2048,
@@ -241,7 +241,7 @@
    "refCpi": 246.5965,
    "name": "1.000% TIPS of February 2048",
    "issued": "2018",
-   "indexRatio": 1.35411
+   "indexRatio": 1.35425
   },
   {
    "year": 2049,
@@ -253,7 +253,7 @@
    "refCpi": 251.6355,
    "name": "1.000% TIPS of February 2049",
    "issued": "2019",
-   "indexRatio": 1.32699
+   "indexRatio": 1.32713
   },
   {
    "year": 2050,
@@ -265,7 +265,7 @@
    "refCpi": 257.09503,
    "name": "0.250% TIPS of February 2050",
    "issued": "2020",
-   "indexRatio": 1.29881
+   "indexRatio": 1.29894
   },
   {
    "year": 2051,
@@ -277,7 +277,7 @@
    "refCpi": 260.3515,
    "name": "0.125% TIPS of February 2051",
    "issued": "2021",
-   "indexRatio": 1.28257
+   "indexRatio": 1.2827
   },
   {
    "year": 2052,
@@ -289,7 +289,7 @@
    "refCpi": 278.375,
    "name": "0.125% TIPS of February 2052",
    "issued": "2022",
-   "indexRatio": 1.19953
+   "indexRatio": 1.19965
   },
   {
    "year": 2053,
@@ -301,7 +301,7 @@
    "refCpi": 297.254,
    "name": "1.500% TIPS of February 2053",
    "issued": "2023",
-   "indexRatio": 1.12334
+   "indexRatio": 1.12346
   },
   {
    "year": 2054,
@@ -313,7 +313,7 @@
    "refCpi": 306.90376,
    "name": "2.125% TIPS of February 2054",
    "issued": "2024",
-   "indexRatio": 1.08802
+   "indexRatio": 1.08813
   },
   {
    "year": 2055,
@@ -325,7 +325,7 @@
    "refCpi": 315.549,
    "name": "2.375% TIPS of February 2055",
    "issued": "2025",
-   "indexRatio": 1.05821
+   "indexRatio": 1.05832
   },
   {
    "year": 2056,
@@ -337,7 +337,7 @@
    "refCpi": 324.088,
    "name": "2.375% TIPS of February 2056",
    "issued": "2026",
-   "indexRatio": 1.03033
+   "indexRatio": 1.03044
   }
  ],
  "allBonds": [
@@ -350,7 +350,7 @@
    "refCpi": 273.25771,
    "name": "0.125% TIPS of October 2026",
    "issued": "2021",
-   "indexRatio": 1.22199
+   "indexRatio": 1.22211
   },
   {
    "cusip": "912810PS1",
@@ -361,7 +361,7 @@
    "refCpi": 201.66452,
    "name": "2.375% TIPS of January 2027",
    "issued": "2007",
-   "indexRatio": 1.65581
+   "indexRatio": 1.65598
   },
   {
    "cusip": "912828V49",
@@ -372,7 +372,7 @@
    "refCpi": 241.55919,
    "name": "0.375% TIPS of January 2027",
    "issued": "2017",
-   "indexRatio": 1.38234
+   "indexRatio": 1.38249
   },
   {
    "cusip": "91282CEJ6",
@@ -383,7 +383,7 @@
    "refCpi": 282.3464,
    "name": "0.125% TIPS of April 2027",
    "issued": "2022",
-   "indexRatio": 1.18265
+   "indexRatio": 1.18277
   },
   {
    "cusip": "9128282L3",
@@ -394,7 +394,7 @@
    "refCpi": 244.61839,
    "name": "0.375% TIPS of July 2027",
    "issued": "2017",
-   "indexRatio": 1.36506
+   "indexRatio": 1.3652
   },
   {
    "cusip": "91282CFR7",
@@ -405,7 +405,7 @@
    "refCpi": 296.22858,
    "name": "1.625% TIPS of October 2027",
    "issued": "2022",
-   "indexRatio": 1.12723
+   "indexRatio": 1.12735
   },
   {
    "cusip": "912810PV4",
@@ -416,7 +416,7 @@
    "refCpi": 209.49645,
    "name": "1.750% TIPS of January 2028",
    "issued": "2008",
-   "indexRatio": 1.59391
+   "indexRatio": 1.59407
   },
   {
    "cusip": "9128283R9",
@@ -427,7 +427,7 @@
    "refCpi": 246.66571,
    "name": "0.500% TIPS of January 2028",
    "issued": "2018",
-   "indexRatio": 1.35373
+   "indexRatio": 1.35387
   },
   {
    "cusip": "912810FD5",
@@ -438,7 +438,7 @@
    "refCpi": 161.74,
    "name": "3.625% TIPS of April 2028",
    "issued": "1998",
-   "indexRatio": 2.06454
+   "indexRatio": 2.06475
   },
   {
    "cusip": "91282CGW5",
@@ -449,7 +449,7 @@
    "refCpi": 299.94933,
    "name": "1.250% TIPS of April 2028",
    "issued": "2023",
-   "indexRatio": 1.11325
+   "indexRatio": 1.11336
   },
   {
    "cusip": "912828Y38",
@@ -460,7 +460,7 @@
    "refCpi": 251.01658,
    "name": "0.750% TIPS of July 2028",
    "issued": "2018",
-   "indexRatio": 1.33026
+   "indexRatio": 1.3304
   },
   {
    "cusip": "91282CJH5",
@@ -471,7 +471,7 @@
    "refCpi": 306.2939,
    "name": "2.375% TIPS of October 2028",
    "issued": "2023",
-   "indexRatio": 1.09019
+   "indexRatio": 1.0903
   },
   {
    "cusip": "912810PZ5",
@@ -482,7 +482,7 @@
    "refCpi": 214.69971,
    "name": "2.500% TIPS of January 2029",
    "issued": "2009",
-   "indexRatio": 1.55528
+   "indexRatio": 1.55544
   },
   {
    "cusip": "9128285W6",
@@ -493,7 +493,7 @@
    "refCpi": 252.50248,
    "name": "0.875% TIPS of January 2029",
    "issued": "2019",
-   "indexRatio": 1.32243
+   "indexRatio": 1.32257
   },
   {
    "cusip": "912810FH6",
@@ -504,7 +504,7 @@
    "refCpi": 164.39333,
    "name": "3.875% TIPS of April 2029",
    "issued": "1999",
-   "indexRatio": 2.03121
+   "indexRatio": 2.03142
   },
   {
    "cusip": "91282CKL4",
@@ -515,7 +515,7 @@
    "refCpi": 309.30787,
    "name": "2.125% TIPS of April 2029",
    "issued": "2024",
-   "indexRatio": 1.07957
+   "indexRatio": 1.07968
   },
   {
    "cusip": "9128287D6",
@@ -526,7 +526,7 @@
    "refCpi": 255.79368,
    "name": "0.250% TIPS of July 2029",
    "issued": "2019",
-   "indexRatio": 1.30542
+   "indexRatio": 1.30555
   },
   {
    "cusip": "91282CLV1",
@@ -537,7 +537,7 @@
    "refCpi": 314.65561,
    "name": "1.625% TIPS of October 2029",
    "issued": "2024",
-   "indexRatio": 1.06122
+   "indexRatio": 1.06133
   },
   {
    "cusip": "912828Z37",
@@ -548,7 +548,7 @@
    "refCpi": 257.28368,
    "name": "0.125% TIPS of January 2030",
    "issued": "2020",
-   "indexRatio": 1.29786
+   "indexRatio": 1.29799
   },
   {
    "cusip": "91282CNB3",
@@ -559,7 +559,7 @@
    "refCpi": 318.32947,
    "name": "1.625% TIPS of April 2030",
    "issued": "2025",
-   "indexRatio": 1.04897
+   "indexRatio": 1.04908
   },
   {
    "cusip": "912828ZZ6",
@@ -570,7 +570,7 @@
    "refCpi": 256.39126,
    "name": "0.125% TIPS of July 2030",
    "issued": "2020",
-   "indexRatio": 1.30238
+   "indexRatio": 1.30251
   },
   {
    "cusip": "91282CPH8",
@@ -581,7 +581,7 @@
    "refCpi": 323.4671,
    "name": "1.125% TIPS of October 2030",
    "issued": "2025",
-   "indexRatio": 1.03231
+   "indexRatio": 1.03241
   },
   {
    "cusip": "91282CBF7",
@@ -592,7 +592,7 @@
    "refCpi": 260.31619,
    "name": "0.125% TIPS of January 2031",
    "issued": "2021",
-   "indexRatio": 1.28274
+   "indexRatio": 1.28287
   },
   {
    "cusip": "91282CQP9",
@@ -603,7 +603,7 @@
    "refCpi": 325.9674,
    "name": "1.250% TIPS of April 2031",
    "issued": "2026",
-   "indexRatio": 1.02439
+   "indexRatio": 1.0245
   },
   {
    "cusip": "91282CCM1",
@@ -614,7 +614,7 @@
    "refCpi": 268.0209,
    "name": "0.125% TIPS of July 2031",
    "issued": "2021",
-   "indexRatio": 1.24587
+   "indexRatio": 1.24599
   },
   {
    "cusip": "91282CDX6",
@@ -625,7 +625,7 @@
    "refCpi": 277.20274,
    "name": "0.125% TIPS of January 2032",
    "issued": "2022",
-   "indexRatio": 1.2046
+   "indexRatio": 1.20472
   },
   {
    "cusip": "912810FQ6",
@@ -636,7 +636,7 @@
    "refCpi": 177.5,
    "name": "3.375% TIPS of April 2032",
    "issued": "2001",
-   "indexRatio": 1.88123
+   "indexRatio": 1.88142
   },
   {
    "cusip": "91282CEZ0",
@@ -647,7 +647,7 @@
    "refCpi": 290.54829,
    "name": "0.625% TIPS of July 2032",
    "issued": "2022",
-   "indexRatio": 1.14927
+   "indexRatio": 1.14939
   },
   {
    "cusip": "91282CGK1",
@@ -658,7 +658,7 @@
    "refCpi": 297.87606,
    "name": "1.125% TIPS of January 2033",
    "issued": "2023",
-   "indexRatio": 1.121
+   "indexRatio": 1.12111
   },
   {
    "cusip": "91282CHP9",
@@ -669,7 +669,7 @@
    "refCpi": 303.70803,
    "name": "1.375% TIPS of July 2033",
    "issued": "2023",
-   "indexRatio": 1.09947
+   "indexRatio": 1.09958
   },
   {
    "cusip": "91282CJY8",
@@ -680,7 +680,7 @@
    "refCpi": 307.391,
    "name": "1.750% TIPS of January 2034",
    "issued": "2024",
-   "indexRatio": 1.0863
+   "indexRatio": 1.08641
   },
   {
    "cusip": "91282CLE9",
@@ -691,7 +691,7 @@
    "refCpi": 313.78329,
    "name": "1.875% TIPS of July 2034",
    "issued": "2024",
-   "indexRatio": 1.06417
+   "indexRatio": 1.06428
   },
   {
    "cusip": "91282CML2",
@@ -702,7 +702,7 @@
    "refCpi": 315.58677,
    "name": "2.125% TIPS of January 2035",
    "issued": "2025",
-   "indexRatio": 1.05809
+   "indexRatio": 1.05819
   },
   {
    "cusip": "91282CNS6",
@@ -713,7 +713,7 @@
    "refCpi": 321.09758,
    "name": "1.875% TIPS of July 2035",
    "issued": "2025",
-   "indexRatio": 1.03993
+   "indexRatio": 1.04003
   },
   {
    "cusip": "91282CPU9",
@@ -724,7 +724,7 @@
    "refCpi": 324.93471,
    "name": "1.875% TIPS of January 2036",
    "issued": "2026",
-   "indexRatio": 1.02765
+   "indexRatio": 1.02775
   },
   {
    "cusip": "91282CRE3",
@@ -735,7 +735,7 @@
    "refCpi": 333.96974,
    "name": "2.375% TIPS of July 2036",
    "issued": "2026",
-   "indexRatio": 0.99985
+   "indexRatio": 0.99995
   },
   {
    "cusip": "912810QF8",
@@ -746,7 +746,7 @@
    "refCpi": 216.1395,
    "name": "2.125% TIPS of February 2040",
    "issued": "2010",
-   "indexRatio": 1.54492
+   "indexRatio": 1.54508
   },
   {
    "cusip": "912810QP6",
@@ -757,7 +757,7 @@
    "refCpi": 218.991,
    "name": "2.125% TIPS of February 2041",
    "issued": "2011",
-   "indexRatio": 1.5248
+   "indexRatio": 1.52496
   },
   {
    "cusip": "912810QV3",
@@ -768,7 +768,7 @@
    "refCpi": 225.96062,
    "name": "0.750% TIPS of February 2042",
    "issued": "2012",
-   "indexRatio": 1.47777
+   "indexRatio": 1.47792
   },
   {
    "cusip": "912810RA8",
@@ -779,7 +779,7 @@
    "refCpi": 229.911,
    "name": "0.625% TIPS of February 2043",
    "issued": "2013",
-   "indexRatio": 1.45238
+   "indexRatio": 1.45253
   },
   {
    "cusip": "912810RF7",
@@ -790,7 +790,7 @@
    "refCpi": 233.059,
    "name": "1.375% TIPS of February 2044",
    "issued": "2014",
-   "indexRatio": 1.43276
+   "indexRatio": 1.43291
   },
   {
    "cusip": "912810RL4",
@@ -801,7 +801,7 @@
    "refCpi": 235.4815,
    "name": "0.750% TIPS of February 2045",
    "issued": "2015",
-   "indexRatio": 1.41802
+   "indexRatio": 1.41817
   },
   {
    "cusip": "912810RR1",
@@ -812,7 +812,7 @@
    "refCpi": 236.94448,
    "name": "1.000% TIPS of February 2046",
    "issued": "2016",
-   "indexRatio": 1.40927
+   "indexRatio": 1.40941
   },
   {
    "cusip": "912810RW0",
@@ -823,7 +823,7 @@
    "refCpi": 241.3925,
    "name": "0.875% TIPS of February 2047",
    "issued": "2017",
-   "indexRatio": 1.3833
+   "indexRatio": 1.38344
   },
   {
    "cusip": "912810SB5",
@@ -834,7 +834,7 @@
    "refCpi": 246.5965,
    "name": "1.000% TIPS of February 2048",
    "issued": "2018",
-   "indexRatio": 1.35411
+   "indexRatio": 1.35425
   },
   {
    "cusip": "912810SG4",
@@ -845,7 +845,7 @@
    "refCpi": 251.6355,
    "name": "1.000% TIPS of February 2049",
    "issued": "2019",
-   "indexRatio": 1.32699
+   "indexRatio": 1.32713
   },
   {
    "cusip": "912810SM1",
@@ -856,7 +856,7 @@
    "refCpi": 257.09503,
    "name": "0.250% TIPS of February 2050",
    "issued": "2020",
-   "indexRatio": 1.29881
+   "indexRatio": 1.29894
   },
   {
    "cusip": "912810SV1",
@@ -867,7 +867,7 @@
    "refCpi": 260.3515,
    "name": "0.125% TIPS of February 2051",
    "issued": "2021",
-   "indexRatio": 1.28257
+   "indexRatio": 1.2827
   },
   {
    "cusip": "912810TE8",
@@ -878,7 +878,7 @@
    "refCpi": 278.375,
    "name": "0.125% TIPS of February 2052",
    "issued": "2022",
-   "indexRatio": 1.19953
+   "indexRatio": 1.19965
   },
   {
    "cusip": "912810TP3",
@@ -889,7 +889,7 @@
    "refCpi": 297.254,
    "name": "1.500% TIPS of February 2053",
    "issued": "2023",
-   "indexRatio": 1.12334
+   "indexRatio": 1.12346
   },
   {
    "cusip": "912810TY4",
@@ -900,7 +900,7 @@
    "refCpi": 306.90376,
    "name": "2.125% TIPS of February 2054",
    "issued": "2024",
-   "indexRatio": 1.08802
+   "indexRatio": 1.08813
   },
   {
    "cusip": "912810UH9",
@@ -911,7 +911,7 @@
    "refCpi": 315.549,
    "name": "2.375% TIPS of February 2055",
    "issued": "2025",
-   "indexRatio": 1.05821
+   "indexRatio": 1.05832
   },
   {
    "cusip": "912810US5",
@@ -922,7 +922,7 @@
    "refCpi": 324.088,
    "name": "2.375% TIPS of February 2056",
    "issued": "2026",
-   "indexRatio": 1.03033
+   "indexRatio": 1.03044
   }
  ]
 }
