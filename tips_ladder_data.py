@@ -42,6 +42,11 @@ def main():
     rows = json.loads(get(url))["data"]
     bonds = []
     for r in rows:
+        # skip announced auctions that have not happened or settled yet (coupon or reference CPI still blank)
+        if any(str(r.get(k)).strip().lower() in ("", "null", "none") for k in ("int_rate", "ref_cpi_on_dated_date", "dated_date")):
+            continue
+        if date.fromisoformat(r["dated_date"]) > settle:
+            continue
         term = r["original_security_term"].split("-")[0] + "-year"
         m = date.fromisoformat(r["maturity_date"])
         bonds.append(dict(cusip=r["cusip"], term=term, coupon=float(r["int_rate"]), dated=r["dated_date"],
