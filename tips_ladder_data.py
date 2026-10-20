@@ -216,9 +216,7 @@ def main():
     (HERE / "tips_ladder_data.json").write_text(json.dumps(out, indent=1))
 
     slim = {k: out[k] for k in ["dataAsOf", "settlement", "refCpiSettlement", "yieldsAsOf", "yieldNote", "curve", "ladder"]}
-    need = {h["cusip"] for e in etfs for h in e["holdings"]} - {b["cusip"] for b in out["ladder"]}
-    slim["etfs"] = [{k: v for k, v in e.items() if k != "url"} for e in etfs]
-    slim["etfBonds"] = [b for b in bonds if b["cusip"] in need]
+    # ETF holdings are not embedded in the page; it loads them from the published JSON each visit
     for name in ("tips_ladder.html", "tips_ladder_wordpress.html"):
         page = HERE / name
         if page.exists():
