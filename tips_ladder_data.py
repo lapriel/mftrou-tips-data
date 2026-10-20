@@ -5,6 +5,8 @@ Pulls the outstanding TIPS and their index ratios from Treasury FiscalData, the 
 and the Federal Reserve fitted TIPS curve; computes index ratios for the next settlement date; applies
 the rung selection rule; writes tips_ladder_data.json and injects it into tips_ladder.html.
 
+Also downloads the holdings of the iShares iBonds Term TIPS ETFs (bullet funds) for the page's ETF option.
+
 Usage:  python3 tips_ladder_data.py            (writes files next to this script)
         python3 tips_ladder_data.py --settle 2026-10-01
 
@@ -214,6 +216,9 @@ def main():
     (HERE / "tips_ladder_data.json").write_text(json.dumps(out, indent=1))
 
     slim = {k: out[k] for k in ["dataAsOf", "settlement", "refCpiSettlement", "yieldsAsOf", "yieldNote", "curve", "ladder"]}
+    need = {h["cusip"] for e in etfs for h in e["holdings"]} - {b["cusip"] for b in out["ladder"]}
+    slim["etfs"] = [{k: v for k, v in e.items() if k != "url"} for e in etfs]
+    slim["etfBonds"] = [b for b in bonds if b["cusip"] in need]
     for name in ("tips_ladder.html", "tips_ladder_wordpress.html"):
         page = HERE / name
         if page.exists():
