@@ -29,6 +29,61 @@ def next_business_day(d):
     while d.weekday() >= 5: d += timedelta(days=1)
     return d
 
+# iShares iBonds Term TIPS ETFs (bullet funds). Each holds TIPS maturing Jan 1 to Oct 15 of its year, then pays
+# out and closes; under the October rule a fund maturing in year Y funds income year Y+1. Product pages are found
+# on the iShares site; this list is the fallback if discovery fails. Expense ratio 0.10% for every fund in the series.
+ISHARES = "https://www.ishares.com"
+IBONDS_TIPS = {  # year: (ticker, product path)
+    2027: ("IBID", "/us/products/333135/ishares-ibonds-oct-2027-term-tips-etf"),
+    2028: ("IBIE", "/us/products/333132/ishares-ibonds-oct-2028-term-tips-etf"),
+    2029: ("IBIF", "/us/products/333141/ishares-ibonds-oct-2029-term-tips-etf"),
+    2030: ("IBIG", "/us/products/333128/ishares-ibonds-oct-2030-term-tips-etf"),
+    2031: ("IBIH", "/us/products/333121/ishares-ibonds-oct-2031-term-tips-etf"),
+    2032: ("IBII", "/us/products/333079/ishares-ibonds-oct-2032-term-tips-etf"),
+    2033: ("IBIJ", "/us/products/333076/ishares-ibonds-oct-2033-term-tips-etf"),
+    2034: ("IBIK", "/us/products/337462/ishares-ibonds-oct-2034-term-tips-etf"),
+    2035: ("IBIL", "/us/products/342148/ishares-ibonds-oct-2035-term-tips-etf"),
+    2036: ("IBIM", "/us/products/350034/ishares-ibonds-oct-2036-term-tips-etf"),
+}
+ETF_FEE = 0.10
+
+def fetch_etfs(settle, known):
+    """Holdings of each iBonds Term TIPS ETF that has not yet matured. Returns a list (may be empty)."""
+    funds = dict(IBONDS_TIPS)
+    try:  # discover new funds (for example a new October year) from the product list
+        page = get(ISHARES + "/us/products/etf-investments")
+        for m in set(re.findall(r"(/us/products/\d+/ishares-ibonds-oct-(\d{4})-term-tips-etf)", page)):
+            y = int(m[1])
+            if y not in funds: funds[y] = (None, m[0])
+    except Exception:
+        pass
+    out = []
+    for y in sorted(funds):
+        if date(y, 10, 15) <= settle + timedelta(days=60): continue  # matured or about to
+        ticker, path = funds[y]
+        try:
+            if not ticker:
+                t = re.search(r"<title>[^<|]*\|\s*([A-Z]{3,5})\b", get(ISHARES + path))
+                ticker = t.group(1) if t else f"Oct {y}"
+            lines = get(ISHARES + path + "/latest-holdings.csv").lstrip("\ufeff").split("\n")
+            asof = next((l.split(",", 1)[1].strip().strip('"') for l in lines[:5] if l.startswith("Fund Holdings as of")), "")
+            start = next(i for i, l in enumerate(lines) if l.startswith("Name,"))
+            hold = []
+            for r in csv.DictReader(io.StringIO("\n".join(lines[start:]))):
+                if r.get("Asset Class") != "Fixed Income" or r.get("CUSIP") not in known: continue
+                par = float(r["Par Value"].replace(",", ""))
+                hold.append(dict(cusip=r["CUSIP"], par=par, weight=float(r["Weight (%)"]),
+                                 realYtm=float(r["Real YTM (%)"]) if r.get("Real YTM (%)") not in (None, "", "-") else None))
+            if not hold: continue
+            tp = sum(h["par"] for h in hold)
+            for h in hold: h["parShare"] = round(h["par"] / tp, 6)
+            out.append(dict(ticker=ticker, name=f"iShares iBonds Oct {y} Term TIPS ETF", maturity=f"{y}-10-15",
+                            fundsYear=y + 1, fee=ETF_FEE, holdingsAsOf=asof, url=ISHARES + path,
+                            holdings=[dict(cusip=h["cusip"], parShare=h["parShare"], weight=h["weight"], realYtm=h["realYtm"]) for h in hold]))
+        except Exception as e:
+            print(f"  ETF {y}: holdings unavailable ({e})")
+    return out
+
 def main():
     settle = None
     for a in sys.argv:
@@ -139,12 +194,23 @@ def main():
             same = sorted([b for b in bonds if b["maturity"][:4] == str(Y) and b["maturity"] > (settle + timedelta(days=60)).isoformat()], key=lambda b: (b["maturity"], b["indexRatio"]))
             if same: byyear[Y] = same[0]
 
+    # 5. Bullet TIPS ETFs; keep the previous night's list if iShares cannot be reached
+    known = {b["cusip"] for b in bonds}
+    etfs = fetch_etfs(settle, known)
+    if not etfs:
+        try:
+            prev = json.loads((HERE / "tips_ladder_data.json").read_text()).get("etfs", [])
+            etfs = [e for e in prev if all(h["cusip"] in known for h in e["holdings"]) and e["maturity"] > (settle + timedelta(days=60)).isoformat()]
+            if etfs: print("  ETF holdings: iShares unavailable, kept previous data")
+        except Exception:
+            etfs = []
+
     out = dict(dataAsOf=date.today().isoformat(), settlement=settle.isoformat(), refCpiSettlement=round(ref, 5),
                yieldsAsOf=tdate,
                yieldNote=f"Treasury par real yield curve (5-30 yr) as of {tdate}." + short_note,
                curve={str(k): v for k, v in curve.items()},
                selectionRule="Each income year is funded by the TIPS maturing between the previous October and that January with the lowest index ratio (the 5-year issue where one exists); otherwise the earliest maturity in the year. Bonds maturing within 60 days of settlement are skipped.",
-               ladder=[dict(year=y, **byyear[y]) for y in sorted(byyear)], allBonds=list(bonds))
+               ladder=[dict(year=y, **byyear[y]) for y in sorted(byyear)], etfs=etfs, allBonds=list(bonds))
     (HERE / "tips_ladder_data.json").write_text(json.dumps(out, indent=1))
 
     slim = {k: out[k] for k in ["dataAsOf", "settlement", "refCpiSettlement", "yieldsAsOf", "yieldNote", "curve", "ladder"]}
@@ -157,6 +223,8 @@ def main():
     print(f"Settlement {settle}, ref CPI {ref:.4f}, {len(list(bonds))} TIPS outstanding, curve {curve} (Treasury {tdate})")
     for y in sorted(byyear):
         b = byyear[y]; print(f"  {y}: {b['name']} ({b['term']}, {b['cusip']}) index ratio {b['indexRatio']}")
+    for e in etfs:
+        print(f"  ETF {e['ticker']} matures {e['maturity']}, funds {e['fundsYear']}: " + ", ".join(f"{h['cusip']} {h['parShare']:.3f}" for h in e["holdings"]))
 
 if __name__ == "__main__":
     main()
