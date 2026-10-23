@@ -2,18 +2,18 @@
  "dataAsOf": "2026-10-23",
  "settlement": "2026-10-26",
  "refCpiSettlement": 334.77445,
- "yieldsAsOf": "10/22/2026",
+ "yieldsAsOf": "10/23/2026",
  "pricesAsOf": "2026-10-23",
  "priceNote": "Bond prices: Treasury FedInvest prices for 2026-10-23 (buy price, or end of day where there is no buy price). Yields are computed from each price.",
- "yieldNote": "Treasury par real yield curve (5-30 yr) as of 10/22/2026, used only for bonds without a price. Under 5 yr: Treasury nominal 6-month and 1-year yields (10/22/2026) less the Fed 2-year breakeven inflation rate (2.35%), interpolated to the 5-year.",
+ "yieldNote": "Treasury par real yield curve (5-30 yr) as of 10/23/2026, used only for bonds without a price. Under 5 yr: Treasury nominal 6-month and 1-year yields (10/23/2026) less the Fed 2-year breakeven inflation rate (2.35%), interpolated to the 5-year.",
  "curve": {
-  "0.5": 1.94,
-  "1": 2.06,
-  "5": 2.33,
-  "7": 2.48,
-  "10": 2.64,
-  "20": 2.91,
-  "30": 3.05
+  "0.5": 1.95,
+  "1": 2.09,
+  "5": 2.34,
+  "7": 2.49,
+  "10": 2.66,
+  "20": 2.94,
+  "30": 3.08
  },
  "selectionRule": "Each income year is funded by the TIPS maturing between the previous October and that January with the lowest index ratio (the 5-year issue where one exists); otherwise the earliest maturity in the year. Bonds maturing within 60 days of settlement are skipped.",
  "ladder": [
