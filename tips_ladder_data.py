@@ -5,6 +5,10 @@ Pulls the outstanding TIPS and their index ratios from Treasury FiscalData, the 
 and the Federal Reserve fitted TIPS curve; computes index ratios for the next settlement date; applies
 the rung selection rule; writes tips_ladder_data.json and injects it into tips_ladder.html.
 
+Bond prices come from Treasury's FedInvest end-of-day price file (the BUY price, or END OF DAY when there is no
+buy price). Each bond's cost and real yield are computed from its own price; the curve is kept as a fallback for
+any bond without a price.
+
 Also downloads the holdings of the iShares iBonds Term TIPS ETFs (bullet funds) for the page's ETF option.
 
 Usage:  python3 tips_ladder_data.py            (writes files next to this script)
@@ -15,7 +19,7 @@ previous October and that January with the lowest index ratio, which is the 5-ye
 exists; otherwise the earliest maturity in the year. Bonds maturing within 60 days of settlement are skipped. 2037-2039 have no maturities and are funded in the
 page with extra January 2036 TIPS.
 """
-import csv, io, json, re, sys, urllib.request
+import csv, http.cookiejar, io, json, re, sys, urllib.parse, urllib.request
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -25,6 +29,54 @@ def get(url):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(req, timeout=60) as r:
         return r.read().decode("utf-8", "replace")
+
+FEDINVEST = "https://www.treasurydirect.gov/GA-FI/FedInvest/selectSecurityPriceDate"
+
+def fetch_fedinvest():
+    """Latest FedInvest TIPS prices. Returns (price date, {cusip: clean real price per 100}) or (None, {})."""
+    try:
+        op = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+        op.addheaders = [("User-Agent", "Mozilla/5.0")]
+        form = op.open(FEDINVEST, timeout=60).read().decode("utf-8", "replace")
+        token = re.search(r'name="_csrf" value="([^"]+)"', form).group(1)
+        pdate = re.search(r'id="priceDate"[^>]*value="(\d{4}-\d{2}-\d{2})"', form).group(1)  # latest date with prices
+        body = urllib.parse.urlencode({"priceDate": pdate, "submit": "Show Prices", "_csrf": token}).encode()
+        html = op.open(FEDINVEST, data=body, timeout=60).read().decode("utf-8", "replace")
+        prices = {}
+        for row in re.findall(r"<tr[^>]*>(.*?)</tr>", html, flags=re.S):
+            c = [re.sub(r"<[^>]+>", "", x).strip() for x in re.findall(r"<td[^>]*>(.*?)</td>", row, flags=re.S)]
+            if len(c) >= 8 and c[1] == "TIPS":
+                buy, sell, eod = (float(v or 0) for v in c[5:8])
+                px = buy or eod or sell
+                if px > 0: prices[c[0]] = px
+        return (pdate if prices else None), prices
+    except Exception as e:
+        print(f"  FedInvest prices unavailable ({e}); using the yield curve")
+        return None, {}
+
+def coupon_dates(b, settle):
+    m = date.fromisoformat(b["maturity"]); out = []
+    for y in range(settle.year - 1, m.year + 1):
+        for mo in (m.month, (m.month + 6 - 1) % 12 + 1):
+            d = date(y, mo, m.day)
+            if d <= m: out.append(d)
+    return sorted(out)
+
+def price_bond(b, settle, clean):
+    """Dirty real price per $1 of original face and real yield to maturity, with the same discounting the page uses."""
+    cds = coupon_dates(b, settle); c = b["coupon"] / 100
+    prev = max([d for d in cds if d <= settle] + [date.fromisoformat(b["dated"])])
+    nxt = min(d for d in cds if d > settle)
+    dirty = clean / 100 + c / 2 * (settle - prev).days / (nxt - prev).days
+    yb = lambda d: (d - settle).days / 365.25
+    flows = [(yb(d), c / 2) for d in cds if d > settle]; flows[-1] = (flows[-1][0], flows[-1][1] + 1)
+    pv = lambda y: sum(f * (1 + y / 2) ** (-2 * t) for t, f in flows)
+    lo, hi = -0.10, 0.20
+    for _ in range(100):
+        mid = (lo + hi) / 2
+        if pv(mid) > dirty: lo = mid
+        else: hi = mid
+    return round(dirty, 6), round(mid * 100, 3)
 
 def next_business_day(d):
     d += timedelta(days=1)
@@ -182,6 +234,13 @@ def main():
     except Exception:
         pass
 
+    # 3b. Market prices for each bond (FedInvest); bonds without a price are valued on the curve in the page
+    pdate, prices = fetch_fedinvest()
+    for b in bonds:
+        if b["cusip"] in prices:
+            b["price"] = prices[b["cusip"]]
+            b["dirty"], b["ytm"] = price_bond(b, settle, prices[b["cusip"]])
+
     # 4. Selection rule
     byyear = {}
     years = sorted({int(b["maturity"][:4]) for b in bonds} | {int(b["maturity"][:4]) + 1 for b in bonds})
@@ -208,14 +267,15 @@ def main():
             etfs = []
 
     out = dict(dataAsOf=date.today().isoformat(), settlement=settle.isoformat(), refCpiSettlement=round(ref, 5),
-               yieldsAsOf=tdate,
-               yieldNote=f"Treasury par real yield curve (5-30 yr) as of {tdate}." + short_note,
+               yieldsAsOf=tdate, pricesAsOf=pdate,
+               priceNote=(f"Bond prices: Treasury FedInvest prices for {pdate} (buy price, or end of day where there is no buy price). Yields are computed from each price." if pdate else "Bond prices unavailable; costs estimated from the real yield curve."),
+               yieldNote=f"Treasury par real yield curve (5-30 yr) as of {tdate}, used only for bonds without a price." + short_note,
                curve={str(k): v for k, v in curve.items()},
                selectionRule="Each income year is funded by the TIPS maturing between the previous October and that January with the lowest index ratio (the 5-year issue where one exists); otherwise the earliest maturity in the year. Bonds maturing within 60 days of settlement are skipped.",
                ladder=[dict(year=y, **byyear[y]) for y in sorted(byyear)], etfs=etfs, allBonds=list(bonds))
     (HERE / "tips_ladder_data.json").write_text(json.dumps(out, indent=1))
 
-    slim = {k: out[k] for k in ["dataAsOf", "settlement", "refCpiSettlement", "yieldsAsOf", "yieldNote", "curve", "ladder"]}
+    slim = {k: out[k] for k in ["dataAsOf", "settlement", "refCpiSettlement", "yieldsAsOf", "pricesAsOf", "priceNote", "yieldNote", "curve", "ladder"]}
     # ETF holdings are not embedded in the page; it loads them from the published JSON each visit
     for name in ("tips_ladder.html", "tips_ladder_wordpress.html"):
         page = HERE / name
@@ -224,8 +284,9 @@ def main():
             s, n = re.subn(r"(const|let) DATA = \{.*?\};\n", lambda m: m.group(1) + " DATA = " + json.dumps(slim) + ";\n", s, count=1, flags=re.S)
             if n: page.write_text(s)
     print(f"Settlement {settle}, ref CPI {ref:.4f}, {len(list(bonds))} TIPS outstanding, curve {curve} (Treasury {tdate})")
+    print(f"FedInvest prices {pdate}: {sum(1 for b in bonds if 'price' in b)} of {len(list(bonds))} TIPS priced")
     for y in sorted(byyear):
-        b = byyear[y]; print(f"  {y}: {b['name']} ({b['term']}, {b['cusip']}) index ratio {b['indexRatio']}")
+        b = byyear[y]; print(f"  {y}: {b['name']} ({b['term']}, {b['cusip']}) index ratio {b['indexRatio']}, price {b.get('price')}, yield {b.get('ytm')}")
     for e in etfs:
         print(f"  ETF {e['ticker']} matures {e['maturity']}, funds {e['fundsYear']}: " + ", ".join(f"{h['cusip']} {h['parShare']:.3f}" for h in e["holdings"]))
 
