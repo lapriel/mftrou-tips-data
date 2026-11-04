@@ -1,19 +1,19 @@
 {
- "dataAsOf": "2026-11-03",
- "settlement": "2026-11-04",
- "refCpiSettlement": 335.176,
- "yieldsAsOf": "11/02/2026",
- "pricesAsOf": "2026-11-02",
- "priceNote": "Bond prices: Treasury FedInvest prices for 2026-11-02 (buy price, or end of day where there is no buy price). Yields are computed from each price.",
- "yieldNote": "Treasury par real yield curve (5-30 yr) as of 11/02/2026, used only for bonds without a price. Under 5 yr: Treasury nominal 6-month and 1-year yields (11/02/2026) less the Fed 2-year breakeven inflation rate (2.40%), interpolated to the 5-year.",
+ "dataAsOf": "2026-11-04",
+ "settlement": "2026-11-05",
+ "refCpiSettlement": 335.24133,
+ "yieldsAsOf": "11/03/2026",
+ "pricesAsOf": "2026-11-03",
+ "priceNote": "Bond prices: Treasury FedInvest prices for 2026-11-03 (buy price, or end of day where there is no buy price). Yields are computed from each price.",
+ "yieldNote": "Treasury par real yield curve (5-30 yr) as of 11/03/2026, used only for bonds without a price. Under 5 yr: Treasury nominal 6-month and 1-year yields (11/03/2026) less the Fed 2-year breakeven inflation rate (2.35%), interpolated to the 5-year.",
  "curve": {
-  "0.5": 1.85,
-  "1": 1.98,
-  "5": 2.31,
-  "7": 2.45,
-  "10": 2.62,
-  "20": 2.91,
-  "30": 3.06
+  "0.5": 1.91,
+  "1": 2.05,
+  "5": 2.35,
+  "7": 2.49,
+  "10": 2.65,
+  "20": 2.94,
+  "30": 3.09
  },
  "selectionRule": "Each income year is funded by the TIPS maturing between the previous October and that January with the lowest index ratio (the 5-year issue where one exists); otherwise the earliest maturity in the year. Bonds maturing within 60 days of settlement are skipped.",
  "ladder": [
@@ -27,10 +27,10 @@
    "refCpi": 241.55919,
    "name": "0.375% TIPS of January 2027",
    "issued": "2017",
-   "indexRatio": 1.38755,
-   "price": 99.75,
-   "dirty": 0.998641,
-   "ytm": 1.647
+   "indexRatio": 1.38782,
+   "price": 99.71875,
+   "dirty": 0.998339,
+   "ytm": 1.827
   },
   {
    "year": 2028,
@@ -42,10 +42,10 @@
    "refCpi": 296.22858,
    "name": "1.625% TIPS of October 2027",
    "issued": "2022",
-   "indexRatio": 1.13148,
-   "price": 99.65625,
-   "dirty": 0.997455,
-   "ytm": 1.995
+   "indexRatio": 1.1317,
+   "price": 99.59375,
+   "dirty": 0.996875,
+   "ytm": 2.063
   },
   {
    "year": 2029,
@@ -57,10 +57,10 @@
    "refCpi": 306.2939,
    "name": "2.375% TIPS of October 2028",
    "issued": "2023",
-   "indexRatio": 1.0943,
-   "price": 100.4375,
-   "dirty": 1.00568,
-   "ytm": 2.142
+   "indexRatio": 1.09451,
+   "price": 100.3125,
+   "dirty": 1.004495,
+   "ytm": 2.208
   },
   {
    "year": 2030,
@@ -72,10 +72,10 @@
    "refCpi": 314.65561,
    "name": "1.625% TIPS of October 2029",
    "issued": "2024",
-   "indexRatio": 1.06522,
-   "price": 98.375,
-   "dirty": 0.984643,
-   "ytm": 2.197
+   "indexRatio": 1.06542,
+   "price": 98.1875,
+   "dirty": 0.982813,
+   "ytm": 2.264
   },
   {
    "year": 2031,
@@ -87,10 +87,10 @@
    "refCpi": 323.4671,
    "name": "1.125% TIPS of October 2030",
    "issued": "2025",
-   "indexRatio": 1.0362,
-   "price": 95.875,
-   "dirty": 0.959368,
-   "ytm": 2.223
+   "indexRatio": 1.0364,
+   "price": 95.65625,
+   "dirty": 0.957212,
+   "ytm": 2.283
   },
   {
    "year": 2032,
@@ -102,10 +102,10 @@
    "refCpi": 277.20274,
    "name": "0.125% TIPS of January 2032",
    "issued": "2022",
-   "indexRatio": 1.20914,
-   "price": 89.28125,
-   "dirty": 0.893193,
-   "ytm": 2.327
+   "indexRatio": 1.20937,
+   "price": 89.03125,
+   "dirty": 0.890696,
+   "ytm": 2.383
   },
   {
    "year": 2033,
@@ -117,10 +117,10 @@
    "refCpi": 297.87606,
    "name": "1.125% TIPS of January 2033",
    "issued": "2023",
-   "indexRatio": 1.12522,
-   "price": 92.78125,
-   "dirty": 0.931236,
-   "ytm": 2.384
+   "indexRatio": 1.12544,
+   "price": 92.484375,
+   "dirty": 0.928298,
+   "ytm": 2.439
   },
   {
    "year": 2034,
@@ -132,10 +132,10 @@
    "refCpi": 307.391,
    "name": "1.750% TIPS of January 2034",
    "issued": "2024",
-   "indexRatio": 1.09039,
-   "price": 95.421875,
-   "dirty": 0.959545,
-   "ytm": 2.447
+   "indexRatio": 1.0906,
+   "price": 95.0625,
+   "dirty": 0.955999,
+   "ytm": 2.503
   },
   {
    "year": 2035,
@@ -147,10 +147,10 @@
    "refCpi": 315.58677,
    "name": "2.125% TIPS of January 2035",
    "issued": "2025",
-   "indexRatio": 1.06207,
-   "price": 97.15625,
-   "dirty": 0.97803,
-   "ytm": 2.51
+   "indexRatio": 1.06228,
+   "price": 96.765625,
+   "dirty": 0.974181,
+   "ytm": 2.565
   },
   {
    "year": 2036,
@@ -162,10 +162,10 @@
    "refCpi": 324.93471,
    "name": "1.875% TIPS of January 2036",
    "issued": "2026",
-   "indexRatio": 1.03152,
-   "price": 94.296875,
-   "dirty": 0.948675,
-   "ytm": 2.575
+   "indexRatio": 1.03172,
+   "price": 93.84375,
+   "dirty": 0.944195,
+   "ytm": 2.633
   },
   {
    "year": 2040,
@@ -177,10 +177,10 @@
    "refCpi": 216.1395,
    "name": "2.125% TIPS of February 2040",
    "issued": "2010",
-   "indexRatio": 1.55074,
-   "price": 92.71875,
-   "dirty": 0.931865,
-   "ytm": 2.784
+   "indexRatio": 1.55104,
+   "price": 92.1875,
+   "dirty": 0.92661,
+   "ytm": 2.835
   },
   {
    "year": 2041,
@@ -192,10 +192,10 @@
    "refCpi": 218.991,
    "name": "2.125% TIPS of February 2041",
    "issued": "2011",
-   "indexRatio": 1.53055,
-   "price": 91.625,
-   "dirty": 0.920927,
-   "ytm": 2.842
+   "indexRatio": 1.53085,
+   "price": 91.09375,
+   "dirty": 0.915673,
+   "ytm": 2.89
   },
   {
    "year": 2042,
@@ -207,10 +207,10 @@
    "refCpi": 225.96062,
    "name": "0.750% TIPS of February 2042",
    "issued": "2012",
-   "indexRatio": 1.48334,
-   "price": 73.421875,
-   "dirty": 0.73587,
-   "ytm": 2.918
+   "indexRatio": 1.48363,
+   "price": 72.90625,
+   "dirty": 0.730734,
+   "ytm": 2.968
   },
   {
    "year": 2043,
@@ -222,10 +222,10 @@
    "refCpi": 229.911,
    "name": "0.625% TIPS of February 2043",
    "issued": "2013",
-   "indexRatio": 1.45785,
-   "price": 70.0625,
-   "dirty": 0.702001,
-   "ytm": 2.954
+   "indexRatio": 1.45814,
+   "price": 69.53125,
+   "dirty": 0.696705,
+   "ytm": 3.005
   },
   {
    "year": 2044,
@@ -237,10 +237,10 @@
    "refCpi": 233.059,
    "name": "1.375% TIPS of February 2044",
    "issued": "2014",
-   "indexRatio": 1.43816,
-   "price": 78.296875,
-   "dirty": 0.785995,
-   "ytm": 2.992
+   "indexRatio": 1.43844,
+   "price": 77.6875,
+   "dirty": 0.779939,
+   "ytm": 3.045
   },
   {
    "year": 2045,
@@ -252,10 +252,10 @@
    "refCpi": 235.4815,
    "name": "0.750% TIPS of February 2045",
    "issued": "2015",
-   "indexRatio": 1.42336,
-   "price": 68.234375,
-   "dirty": 0.683995,
-   "ytm": 3.024
+   "indexRatio": 1.42364,
+   "price": 67.671875,
+   "dirty": 0.67839,
+   "ytm": 3.075
   },
   {
    "year": 2046,
@@ -267,10 +267,10 @@
    "refCpi": 236.94448,
    "name": "1.000% TIPS of February 2046",
    "issued": "2016",
-   "indexRatio": 1.41458,
-   "price": 70.4375,
-   "dirty": 0.706576,
-   "ytm": 3.037
+   "indexRatio": 1.41485,
+   "price": 69.84375,
+   "dirty": 0.700666,
+   "ytm": 3.087
   },
   {
    "year": 2047,
@@ -282,10 +282,10 @@
    "refCpi": 241.3925,
    "name": "0.875% TIPS of February 2047",
    "issued": "2017",
-   "indexRatio": 1.38851,
-   "price": 67.28125,
-   "dirty": 0.674738,
-   "ytm": 3.05
+   "indexRatio": 1.38878,
+   "price": 66.703125,
+   "dirty": 0.668981,
+   "ytm": 3.099
   },
   {
    "year": 2048,
@@ -297,10 +297,10 @@
    "refCpi": 246.5965,
    "name": "1.000% TIPS of February 2048",
    "issued": "2018",
-   "indexRatio": 1.35921,
-   "price": 68.0,
-   "dirty": 0.682201,
-   "ytm": 3.056
+   "indexRatio": 1.35947,
+   "price": 67.390625,
+   "dirty": 0.676135,
+   "ytm": 3.106
   },
   {
    "year": 2049,
@@ -312,10 +312,10 @@
    "refCpi": 251.6355,
    "name": "1.000% TIPS of February 2049",
    "issued": "2019",
-   "indexRatio": 1.33199,
-   "price": 67.0,
-   "dirty": 0.672201,
-   "ytm": 3.052
+   "indexRatio": 1.33225,
+   "price": 66.375,
+   "dirty": 0.665978,
+   "ytm": 3.101
   },
   {
    "year": 2050,
@@ -327,10 +327,10 @@
    "refCpi": 257.09503,
    "name": "0.250% TIPS of February 2050",
    "issued": "2020",
-   "indexRatio": 1.3037,
-   "price": 53.375,
-   "dirty": 0.5343,
-   "ytm": 3.066
+   "indexRatio": 1.30396,
+   "price": 52.828125,
+   "dirty": 0.528838,
+   "ytm": 3.114
   },
   {
    "year": 2051,
@@ -342,10 +342,10 @@
    "refCpi": 260.3515,
    "name": "0.125% TIPS of February 2051",
    "issued": "2021",
-   "indexRatio": 1.2874,
-   "price": 50.015625,
-   "dirty": 0.500431,
-   "ytm": 3.056
+   "indexRatio": 1.28765,
+   "price": 49.484375,
+   "dirty": 0.495122,
+   "ytm": 3.102
   },
   {
    "year": 2052,
@@ -357,10 +357,10 @@
    "refCpi": 278.375,
    "name": "0.125% TIPS of February 2052",
    "issued": "2022",
-   "indexRatio": 1.20404,
-   "price": 48.65625,
-   "dirty": 0.486838,
-   "ytm": 3.055
+   "indexRatio": 1.20428,
+   "price": 48.109375,
+   "dirty": 0.481372,
+   "ytm": 3.102
   },
   {
    "year": 2053,
@@ -372,10 +372,10 @@
    "refCpi": 297.254,
    "name": "1.500% TIPS of February 2053",
    "issued": "2023",
-   "indexRatio": 1.12757,
-   "price": 71.875,
-   "dirty": 0.722052,
-   "ytm": 3.066
+   "indexRatio": 1.12779,
+   "price": 71.171875,
+   "dirty": 0.715061,
+   "ytm": 3.114
   },
   {
    "year": 2054,
@@ -387,10 +387,10 @@
    "refCpi": 306.90376,
    "name": "2.125% TIPS of February 2054",
    "issued": "2024",
-   "indexRatio": 1.09212,
-   "price": 82.65625,
-   "dirty": 0.83124,
-   "ytm": 3.068
+   "indexRatio": 1.09233,
+   "price": 81.890625,
+   "dirty": 0.823641,
+   "ytm": 3.115
   },
   {
    "year": 2055,
@@ -402,10 +402,10 @@
    "refCpi": 315.549,
    "name": "2.375% TIPS of February 2055",
    "issued": "2025",
-   "indexRatio": 1.0622,
-   "price": 87.0625,
-   "dirty": 0.875853,
-   "ytm": 3.062
+   "indexRatio": 1.06241,
+   "price": 86.265625,
+   "dirty": 0.867948,
+   "ytm": 3.108
   },
   {
    "year": 2056,
@@ -417,10 +417,10 @@
    "refCpi": 324.088,
    "name": "2.375% TIPS of February 2056",
    "issued": "2026",
-   "indexRatio": 1.03421,
-   "price": 87.125,
-   "dirty": 0.876478,
-   "ytm": 3.042
+   "indexRatio": 1.03441,
+   "price": 86.296875,
+   "dirty": 0.868261,
+   "ytm": 3.089
   }
  ],
  "etfs": [
@@ -430,38 +430,38 @@
    "maturity": "2027-10-15",
    "fundsYear": 2028,
    "fee": 0.1,
-   "holdingsAsOf": "Oct 30, 2026",
+   "holdingsAsOf": "Nov 02, 2026",
    "url": "https://www.ishares.com/us/products/333135/ishares-ibonds-oct-2027-term-tips-etf",
    "holdings": [
     {
      "cusip": "91282CFR7",
-     "parShare": 0.246538,
-     "weight": 24.64,
-     "realYtm": 2.46
+     "parShare": 0.24654,
+     "weight": 24.63,
+     "realYtm": 2.68
     },
     {
      "cusip": "91282CEJ6",
-     "parShare": 0.246075,
-     "weight": 24.43,
-     "realYtm": 3.16
+     "parShare": 0.246076,
+     "weight": 24.42,
+     "realYtm": 3.65
     },
     {
      "cusip": "9128282L3",
-     "parShare": 0.216707,
-     "weight": 21.55,
-     "realYtm": 2.25
+     "parShare": 0.216706,
+     "weight": 21.54,
+     "realYtm": 2.57
     },
     {
      "cusip": "912828V49",
-     "parShare": 0.193237,
-     "weight": 19.32,
-     "realYtm": 4.1
+     "parShare": 0.193236,
+     "weight": 19.34,
+     "realYtm": 4.53
     },
     {
      "cusip": "912810PS1",
-     "parShare": 0.097443,
-     "weight": 9.84,
-     "realYtm": 4.26
+     "parShare": 0.097442,
+     "weight": 9.85,
+     "realYtm": 4.53
     }
    ]
   },
@@ -471,44 +471,44 @@
    "maturity": "2028-10-15",
    "fundsYear": 2029,
    "fee": 0.1,
-   "holdingsAsOf": "Oct 30, 2026",
+   "holdingsAsOf": "Nov 02, 2026",
    "url": "https://www.ishares.com/us/products/333132/ishares-ibonds-oct-2028-term-tips-etf",
    "holdings": [
     {
      "cusip": "91282CJH5",
      "parShare": 0.228256,
-     "weight": 23.15,
-     "realYtm": 2.36
+     "weight": 23.14,
+     "realYtm": 2.48
     },
     {
      "cusip": "91282CGW5",
      "parShare": 0.223361,
      "weight": 22.16,
-     "realYtm": 2.72
+     "realYtm": 2.88
     },
     {
      "cusip": "9128283R9",
      "parShare": 0.203233,
      "weight": 20.07,
-     "realYtm": 2.74
+     "realYtm": 2.92
     },
     {
      "cusip": "912828Y38",
-     "parShare": 0.175964,
+     "parShare": 0.175963,
      "weight": 17.39,
-     "realYtm": 2.33
+     "realYtm": 2.46
     },
     {
      "cusip": "912810FD5",
      "parShare": 0.085777,
      "weight": 8.81,
-     "realYtm": 2.77
+     "realYtm": 2.92
     },
     {
      "cusip": "912810PV4",
      "parShare": 0.08341,
      "weight": 8.39,
-     "realYtm": 2.76
+     "realYtm": 2.94
     }
    ]
   },
@@ -518,44 +518,44 @@
    "maturity": "2029-10-15",
    "fundsYear": 2030,
    "fee": 0.1,
-   "holdingsAsOf": "Oct 30, 2026",
+   "holdingsAsOf": "Nov 02, 2026",
    "url": "https://www.ishares.com/us/products/333141/ishares-ibonds-oct-2029-term-tips-etf",
    "holdings": [
     {
      "cusip": "91282CLV1",
      "parShare": 0.248458,
      "weight": 24.78,
-     "realYtm": 2.34
+     "realYtm": 2.44
     },
     {
      "cusip": "91282CKL4",
-     "parShare": 0.236948,
+     "parShare": 0.236947,
      "weight": 23.9,
-     "realYtm": 2.53
+     "realYtm": 2.64
     },
     {
      "cusip": "9128287D6",
-     "parShare": 0.181978,
-     "weight": 17.54,
-     "realYtm": 2.3
+     "parShare": 0.181979,
+     "weight": 17.53,
+     "realYtm": 2.41
     },
     {
      "cusip": "9128285W6",
      "parShare": 0.154093,
      "weight": 15.17,
-     "realYtm": 2.5
+     "realYtm": 2.62
     },
     {
      "cusip": "912810FH6",
      "parShare": 0.099978,
      "weight": 10.51,
-     "realYtm": 2.54
+     "realYtm": 2.65
     },
     {
      "cusip": "912810PZ5",
      "parShare": 0.078545,
      "weight": 8.05,
-     "realYtm": 2.52
+     "realYtm": 2.63
     }
    ]
   },
@@ -565,32 +565,32 @@
    "maturity": "2030-10-15",
    "fundsYear": 2031,
    "fee": 0.1,
-   "holdingsAsOf": "Oct 30, 2026",
+   "holdingsAsOf": "Nov 02, 2026",
    "url": "https://www.ishares.com/us/products/333128/ishares-ibonds-oct-2030-term-tips-etf",
    "holdings": [
     {
      "cusip": "91282CPH8",
      "parShare": 0.276921,
      "weight": 27.92,
-     "realYtm": 2.33
+     "realYtm": 2.4
     },
     {
      "cusip": "91282CNB3",
-     "parShare": 0.269965,
+     "parShare": 0.269964,
      "weight": 27.74,
-     "realYtm": 2.46
+     "realYtm": 2.54
     },
     {
      "cusip": "912828ZZ6",
      "parShare": 0.23597,
-     "weight": 23.0,
-     "realYtm": 2.3
+     "weight": 22.99,
+     "realYtm": 2.39
     },
     {
      "cusip": "912828Z37",
-     "parShare": 0.217144,
+     "parShare": 0.217145,
      "weight": 21.32,
-     "realYtm": 2.42
+     "realYtm": 2.5
     }
    ]
   },
@@ -600,26 +600,26 @@
    "maturity": "2031-10-15",
    "fundsYear": 2032,
    "fee": 0.1,
-   "holdingsAsOf": "Oct 30, 2026",
+   "holdingsAsOf": "Nov 02, 2026",
    "url": "https://www.ishares.com/us/products/333121/ishares-ibonds-oct-2031-term-tips-etf",
    "holdings": [
     {
      "cusip": "91282CQP9",
-     "parShare": 0.355349,
-     "weight": 30.73,
-     "realYtm": 2.44
+     "parShare": 0.35535,
+     "weight": 30.74,
+     "realYtm": 2.51
     },
     {
      "cusip": "91282CCM1",
      "parShare": 0.325003,
      "weight": 26.7,
-     "realYtm": 2.32
+     "realYtm": 2.39
     },
     {
      "cusip": "91282CBF7",
-     "parShare": 0.319648,
+     "parShare": 0.319647,
      "weight": 26.47,
-     "realYtm": 2.4
+     "realYtm": 2.47
     }
    ]
   },
@@ -629,26 +629,26 @@
    "maturity": "2032-10-15",
    "fundsYear": 2033,
    "fee": 0.1,
-   "holdingsAsOf": "Oct 30, 2026",
+   "holdingsAsOf": "Nov 02, 2026",
    "url": "https://www.ishares.com/us/products/333079/ishares-ibonds-oct-2032-term-tips-etf",
    "holdings": [
     {
      "cusip": "91282CEZ0",
-     "parShare": 0.47353,
-     "weight": 47.34,
-     "realYtm": 2.38
+     "parShare": 0.473529,
+     "weight": 47.35,
+     "realYtm": 2.42
     },
     {
      "cusip": "91282CDX6",
-     "parShare": 0.461109,
-     "weight": 45.1,
-     "realYtm": 2.41
+     "parShare": 0.46111,
+     "weight": 45.08,
+     "realYtm": 2.47
     },
     {
      "cusip": "912810FQ6",
      "parShare": 0.065361,
-     "weight": 7.54,
-     "realYtm": 2.46
+     "weight": 7.53,
+     "realYtm": 2.51
     }
    ]
   },
@@ -658,20 +658,20 @@
    "maturity": "2033-10-15",
    "fundsYear": 2034,
    "fee": 0.1,
-   "holdingsAsOf": "Oct 30, 2026",
+   "holdingsAsOf": "Nov 02, 2026",
    "url": "https://www.ishares.com/us/products/333076/ishares-ibonds-oct-2033-term-tips-etf",
    "holdings": [
     {
      "cusip": "91282CGK1",
      "parShare": 0.505077,
      "weight": 50.17,
-     "realYtm": 2.47
+     "realYtm": 2.51
     },
     {
      "cusip": "91282CHP9",
      "parShare": 0.494923,
      "weight": 49.8,
-     "realYtm": 2.44
+     "realYtm": 2.48
     }
    ]
   },
@@ -681,20 +681,20 @@
    "maturity": "2034-10-15",
    "fundsYear": 2035,
    "fee": 0.1,
-   "holdingsAsOf": "Oct 30, 2026",
+   "holdingsAsOf": "Nov 02, 2026",
    "url": "https://www.ishares.com/us/products/337462/ishares-ibonds-oct-2034-term-tips-etf",
    "holdings": [
     {
      "cusip": "91282CLE9",
-     "parShare": 0.509558,
-     "weight": 51.12,
-     "realYtm": 2.52
+     "parShare": 0.50956,
+     "weight": 51.13,
+     "realYtm": 2.54
     },
     {
      "cusip": "91282CJY8",
-     "parShare": 0.490442,
-     "weight": 48.85,
-     "realYtm": 2.53
+     "parShare": 0.49044,
+     "weight": 48.84,
+     "realYtm": 2.56
     }
    ]
   },
@@ -704,20 +704,20 @@
    "maturity": "2035-10-15",
    "fundsYear": 2036,
    "fee": 0.1,
-   "holdingsAsOf": "Oct 30, 2026",
+   "holdingsAsOf": "Nov 02, 2026",
    "url": "https://www.ishares.com/us/products/342148/ishares-ibonds-oct-2035-term-tips-etf",
    "holdings": [
     {
      "cusip": "91282CNS6",
-     "parShare": 0.513932,
+     "parShare": 0.513931,
      "weight": 50.81,
-     "realYtm": 2.6
+     "realYtm": 2.61
     },
     {
      "cusip": "91282CML2",
-     "parShare": 0.486068,
+     "parShare": 0.486069,
      "weight": 49.16,
-     "realYtm": 2.6
+     "realYtm": 2.62
     }
    ]
   },
@@ -727,20 +727,20 @@
    "maturity": "2036-10-15",
    "fundsYear": 2037,
    "fee": 0.1,
-   "holdingsAsOf": "Oct 30, 2026",
+   "holdingsAsOf": "Nov 02, 2026",
    "url": "https://www.ishares.com/us/products/350034/ishares-ibonds-oct-2036-term-tips-etf",
    "holdings": [
     {
      "cusip": "91282CPU9",
-     "parShare": 0.587237,
+     "parShare": 0.587243,
      "weight": 57.64,
-     "realYtm": 2.66
+     "realYtm": 2.68
     },
     {
      "cusip": "91282CRE3",
-     "parShare": 0.412763,
+     "parShare": 0.412757,
      "weight": 42.31,
-     "realYtm": 2.65
+     "realYtm": 2.67
     }
    ]
   }
@@ -755,10 +755,10 @@
    "refCpi": 201.66452,
    "name": "2.375% TIPS of January 2027",
    "issued": "2007",
-   "indexRatio": 1.66205,
-   "price": 100.125,
-   "dirty": 1.008478,
-   "ytm": 1.713
+   "indexRatio": 1.66237,
+   "price": 100.09375,
+   "dirty": 1.00823,
+   "ytm": 1.865
   },
   {
    "cusip": "912828V49",
@@ -769,10 +769,10 @@
    "refCpi": 241.55919,
    "name": "0.375% TIPS of January 2027",
    "issued": "2017",
-   "indexRatio": 1.38755,
-   "price": 99.75,
-   "dirty": 0.998641,
-   "ytm": 1.647
+   "indexRatio": 1.38782,
+   "price": 99.71875,
+   "dirty": 0.998339,
+   "ytm": 1.827
   },
   {
    "cusip": "91282CEJ6",
@@ -783,10 +783,10 @@
    "refCpi": 282.3464,
    "name": "0.125% TIPS of April 2027",
    "issued": "2022",
-   "indexRatio": 1.18711,
-   "price": 99.03125,
-   "dirty": 0.990381,
-   "ytm": 2.334
+   "indexRatio": 1.18734,
+   "price": 98.96875,
+   "dirty": 0.98976,
+   "ytm": 2.492
   },
   {
    "cusip": "9128282L3",
@@ -797,10 +797,10 @@
    "refCpi": 244.61839,
    "name": "0.375% TIPS of July 2027",
    "issued": "2017",
-   "indexRatio": 1.3702,
-   "price": 99.125,
-   "dirty": 0.992391,
-   "ytm": 1.652
+   "indexRatio": 1.37047,
+   "price": 99.03125,
+   "dirty": 0.991464,
+   "ytm": 1.795
   },
   {
    "cusip": "91282CFR7",
@@ -811,10 +811,10 @@
    "refCpi": 296.22858,
    "name": "1.625% TIPS of October 2027",
    "issued": "2022",
-   "indexRatio": 1.13148,
-   "price": 99.65625,
-   "dirty": 0.997455,
-   "ytm": 1.995
+   "indexRatio": 1.1317,
+   "price": 99.59375,
+   "dirty": 0.996875,
+   "ytm": 2.063
   },
   {
    "cusip": "912810PV4",
@@ -825,10 +825,10 @@
    "refCpi": 209.49645,
    "name": "1.750% TIPS of January 2028",
    "issued": "2008",
-   "indexRatio": 1.59991,
-   "price": 99.25,
-   "dirty": 0.997826,
-   "ytm": 2.387
+   "indexRatio": 1.60022,
+   "price": 99.15625,
+   "dirty": 0.996936,
+   "ytm": 2.469
   },
   {
    "cusip": "9128283R9",
@@ -839,10 +839,10 @@
    "refCpi": 246.66571,
    "name": "0.500% TIPS of January 2028",
    "issued": "2018",
-   "indexRatio": 1.35883,
-   "price": 97.78125,
-   "dirty": 0.979334,
-   "ytm": 2.392
+   "indexRatio": 1.35909,
+   "price": 97.6875,
+   "dirty": 0.97841,
+   "ytm": 2.477
   },
   {
    "cusip": "912810FD5",
@@ -853,10 +853,10 @@
    "refCpi": 161.74,
    "name": "3.625% TIPS of April 2028",
    "issued": "1998",
-   "indexRatio": 2.07231,
-   "price": 101.65625,
-   "dirty": 1.018554,
-   "ytm": 2.45
+   "indexRatio": 2.07272,
+   "price": 101.5625,
+   "dirty": 1.017716,
+   "ytm": 2.513
   },
   {
    "cusip": "91282CGW5",
@@ -867,10 +867,10 @@
    "refCpi": 299.94933,
    "name": "1.250% TIPS of April 2028",
    "issued": "2023",
-   "indexRatio": 1.11744,
-   "price": 98.328125,
-   "dirty": 0.983968,
-   "ytm": 2.433
+   "indexRatio": 1.11766,
+   "price": 98.21875,
+   "dirty": 0.982909,
+   "ytm": 2.514
   },
   {
    "cusip": "912828Y38",
@@ -881,10 +881,10 @@
    "refCpi": 251.01658,
    "name": "0.750% TIPS of July 2028",
    "issued": "2018",
-   "indexRatio": 1.33527,
-   "price": 97.78125,
-   "dirty": 0.980095,
-   "ytm": 2.089
+   "indexRatio": 1.33553,
+   "price": 97.6875,
+   "dirty": 0.979178,
+   "ytm": 2.149
   },
   {
    "cusip": "91282CJH5",
@@ -895,10 +895,10 @@
    "refCpi": 306.2939,
    "name": "2.375% TIPS of October 2028",
    "issued": "2023",
-   "indexRatio": 1.0943,
-   "price": 100.4375,
-   "dirty": 1.00568,
-   "ytm": 2.142
+   "indexRatio": 1.09451,
+   "price": 100.3125,
+   "dirty": 1.004495,
+   "ytm": 2.208
   },
   {
    "cusip": "912810PZ5",
@@ -909,10 +909,10 @@
    "refCpi": 214.69971,
    "name": "2.500% TIPS of January 2029",
    "issued": "2009",
-   "indexRatio": 1.56114,
-   "price": 100.390625,
-   "dirty": 1.011515,
-   "ytm": 2.313
+   "indexRatio": 1.56144,
+   "price": 100.25,
+   "dirty": 1.010177,
+   "ytm": 2.379
   },
   {
    "cusip": "9128285W6",
@@ -923,10 +923,10 @@
    "refCpi": 252.50248,
    "name": "0.875% TIPS of January 2029",
    "issued": "2019",
-   "indexRatio": 1.32742,
-   "price": 96.921875,
-   "dirty": 0.971882,
-   "ytm": 2.318
+   "indexRatio": 1.32768,
+   "price": 96.78125,
+   "dirty": 0.970499,
+   "ytm": 2.387
   },
   {
    "cusip": "912810FH6",
@@ -937,10 +937,10 @@
    "refCpi": 164.39333,
    "name": "3.875% TIPS of April 2029",
    "issued": "1999",
-   "indexRatio": 2.03887,
-   "price": 103.59375,
-   "dirty": 1.038067,
-   "ytm": 2.354
+   "indexRatio": 2.03926,
+   "price": 103.421875,
+   "dirty": 1.036454,
+   "ytm": 2.423
   },
   {
    "cusip": "91282CKL4",
@@ -951,10 +951,10 @@
    "refCpi": 309.30787,
    "name": "2.125% TIPS of April 2029",
    "issued": "2024",
-   "indexRatio": 1.08363,
-   "price": 99.453125,
-   "dirty": 0.995699,
-   "ytm": 2.356
+   "indexRatio": 1.08384,
+   "price": 99.28125,
+   "dirty": 0.994038,
+   "ytm": 2.43
   },
   {
    "cusip": "9128287D6",
@@ -965,10 +965,10 @@
    "refCpi": 255.79368,
    "name": "0.250% TIPS of July 2029",
    "issued": "2019",
-   "indexRatio": 1.31034,
-   "price": 95.03125,
-   "dirty": 0.951073,
-   "ytm": 2.159
+   "indexRatio": 1.31059,
+   "price": 94.875,
+   "dirty": 0.949518,
+   "ytm": 2.222
   },
   {
    "cusip": "91282CLV1",
@@ -979,10 +979,10 @@
    "refCpi": 314.65561,
    "name": "1.625% TIPS of October 2029",
    "issued": "2024",
-   "indexRatio": 1.06522,
-   "price": 98.375,
-   "dirty": 0.984643,
-   "ytm": 2.197
+   "indexRatio": 1.06542,
+   "price": 98.1875,
+   "dirty": 0.982813,
+   "ytm": 2.264
   },
   {
    "cusip": "912828Z37",
@@ -993,10 +993,10 @@
    "refCpi": 257.28368,
    "name": "0.125% TIPS of January 2030",
    "issued": "2020",
-   "indexRatio": 1.30275,
-   "price": 93.359375,
-   "dirty": 0.933974,
-   "ytm": 2.29
+   "indexRatio": 1.303,
+   "price": 93.1875,
+   "dirty": 0.932259,
+   "ytm": 2.351
   },
   {
    "cusip": "91282CNB3",
@@ -1007,10 +1007,10 @@
    "refCpi": 318.32947,
    "name": "1.625% TIPS of April 2030",
    "issued": "2025",
-   "indexRatio": 1.05292,
-   "price": 97.65625,
-   "dirty": 0.977455,
-   "ytm": 2.337
+   "indexRatio": 1.05313,
+   "price": 97.453125,
+   "dirty": 0.975469,
+   "ytm": 2.401
   },
   {
    "cusip": "912828ZZ6",
@@ -1021,10 +1021,10 @@
    "refCpi": 256.39126,
    "name": "0.125% TIPS of July 2030",
    "issued": "2020",
-   "indexRatio": 1.30728,
-   "price": 92.6875,
-   "dirty": 0.927255,
-   "ytm": 2.197
+   "indexRatio": 1.30754,
+   "price": 92.453125,
+   "dirty": 0.924915,
+   "ytm": 2.268
   },
   {
    "cusip": "91282CPH8",
@@ -1035,10 +1035,10 @@
    "refCpi": 323.4671,
    "name": "1.125% TIPS of October 2030",
    "issued": "2025",
-   "indexRatio": 1.0362,
-   "price": 95.875,
-   "dirty": 0.959368,
-   "ytm": 2.223
+   "indexRatio": 1.0364,
+   "price": 95.65625,
+   "dirty": 0.957212,
+   "ytm": 2.283
   },
   {
    "cusip": "91282CBF7",
@@ -1049,10 +1049,10 @@
    "refCpi": 260.31619,
    "name": "0.125% TIPS of January 2031",
    "issued": "2021",
-   "indexRatio": 1.28757,
-   "price": 91.34375,
-   "dirty": 0.913818,
-   "ytm": 2.3
+   "indexRatio": 1.28782,
+   "price": 91.125,
+   "dirty": 0.911634,
+   "ytm": 2.36
   },
   {
    "cusip": "91282CQP9",
@@ -1063,10 +1063,10 @@
    "refCpi": 325.9674,
    "name": "1.250% TIPS of April 2031",
    "issued": "2026",
-   "indexRatio": 1.02825,
-   "price": 95.390625,
-   "dirty": 0.954593,
-   "ytm": 2.349
+   "indexRatio": 1.02845,
+   "price": 95.15625,
+   "dirty": 0.952284,
+   "ytm": 2.407
   },
   {
    "cusip": "91282CCM1",
@@ -1077,10 +1077,10 @@
    "refCpi": 268.0209,
    "name": "0.125% TIPS of July 2031",
    "issued": "2021",
-   "indexRatio": 1.25056,
-   "price": 90.625,
-   "dirty": 0.90663,
-   "ytm": 2.241
+   "indexRatio": 1.2508,
+   "price": 90.40625,
+   "dirty": 0.904446,
+   "ytm": 2.294
   },
   {
    "cusip": "91282CDX6",
@@ -1091,10 +1091,10 @@
    "refCpi": 277.20274,
    "name": "0.125% TIPS of January 2032",
    "issued": "2022",
-   "indexRatio": 1.20914,
-   "price": 89.28125,
-   "dirty": 0.893193,
-   "ytm": 2.327
+   "indexRatio": 1.20937,
+   "price": 89.03125,
+   "dirty": 0.890696,
+   "ytm": 2.383
   },
   {
    "cusip": "912810FQ6",
@@ -1105,10 +1105,10 @@
    "refCpi": 177.5,
    "name": "3.375% TIPS of April 2032",
    "issued": "2001",
-   "indexRatio": 1.88832,
-   "price": 105.15625,
-   "dirty": 1.053417,
-   "ytm": 2.36
+   "indexRatio": 1.88868,
+   "price": 104.859375,
+   "dirty": 1.050541,
+   "ytm": 2.416
   },
   {
    "cusip": "91282CEZ0",
@@ -1119,10 +1119,10 @@
    "refCpi": 290.54829,
    "name": "0.625% TIPS of July 2032",
    "issued": "2022",
-   "indexRatio": 1.1536,
-   "price": 91.1875,
-   "dirty": 0.913777,
-   "ytm": 2.284
+   "indexRatio": 1.15382,
+   "price": 90.90625,
+   "dirty": 0.910982,
+   "ytm": 2.341
   },
   {
    "cusip": "91282CGK1",
@@ -1133,10 +1133,10 @@
    "refCpi": 297.87606,
    "name": "1.125% TIPS of January 2033",
    "issued": "2023",
-   "indexRatio": 1.12522,
-   "price": 92.78125,
-   "dirty": 0.931236,
-   "ytm": 2.384
+   "indexRatio": 1.12544,
+   "price": 92.484375,
+   "dirty": 0.928298,
+   "ytm": 2.439
   },
   {
    "cusip": "91282CHP9",
@@ -1147,10 +1147,10 @@
    "refCpi": 303.70803,
    "name": "1.375% TIPS of July 2033",
    "issued": "2023",
-   "indexRatio": 1.10361,
-   "price": 93.9375,
-   "dirty": 0.94356,
-   "ytm": 2.36
+   "indexRatio": 1.10383,
+   "price": 93.59375,
+   "dirty": 0.94016,
+   "ytm": 2.418
   },
   {
    "cusip": "91282CJY8",
@@ -1161,10 +1161,10 @@
    "refCpi": 307.391,
    "name": "1.750% TIPS of January 2034",
    "issued": "2024",
-   "indexRatio": 1.09039,
-   "price": 95.421875,
-   "dirty": 0.959545,
-   "ytm": 2.447
+   "indexRatio": 1.0906,
+   "price": 95.0625,
+   "dirty": 0.955999,
+   "ytm": 2.503
   },
   {
    "cusip": "91282CLE9",
@@ -1175,10 +1175,10 @@
    "refCpi": 313.78329,
    "name": "1.875% TIPS of July 2034",
    "issued": "2024",
-   "indexRatio": 1.06818,
-   "price": 96.125,
-   "dirty": 0.966957,
-   "ytm": 2.431
+   "indexRatio": 1.06838,
+   "price": 95.71875,
+   "dirty": 0.962945,
+   "ytm": 2.49
   },
   {
    "cusip": "91282CML2",
@@ -1189,10 +1189,10 @@
    "refCpi": 315.58677,
    "name": "2.125% TIPS of January 2035",
    "issued": "2025",
-   "indexRatio": 1.06207,
-   "price": 97.15625,
-   "dirty": 0.97803,
-   "ytm": 2.51
+   "indexRatio": 1.06228,
+   "price": 96.765625,
+   "dirty": 0.974181,
+   "ytm": 2.565
   },
   {
    "cusip": "91282CNS6",
@@ -1203,10 +1203,10 @@
    "refCpi": 321.09758,
    "name": "1.875% TIPS of July 2035",
    "issued": "2025",
-   "indexRatio": 1.04384,
-   "price": 95.0625,
-   "dirty": 0.956332,
-   "ytm": 2.511
+   "indexRatio": 1.04405,
+   "price": 94.625,
+   "dirty": 0.952007,
+   "ytm": 2.57
   },
   {
    "cusip": "91282CPU9",
@@ -1217,10 +1217,10 @@
    "refCpi": 324.93471,
    "name": "1.875% TIPS of January 2036",
    "issued": "2026",
-   "indexRatio": 1.03152,
-   "price": 94.296875,
-   "dirty": 0.948675,
-   "ytm": 2.575
+   "indexRatio": 1.03172,
+   "price": 93.84375,
+   "dirty": 0.944195,
+   "ytm": 2.633
   },
   {
    "cusip": "91282CRE3",
@@ -1231,10 +1231,10 @@
    "refCpi": 333.96974,
    "name": "2.375% TIPS of July 2036",
    "issued": "2026",
-   "indexRatio": 1.00361,
-   "price": 98.34375,
-   "dirty": 0.990666,
-   "ytm": 2.569
+   "indexRatio": 1.00381,
+   "price": 97.875,
+   "dirty": 0.986043,
+   "ytm": 2.625
   },
   {
    "cusip": "912810QF8",
@@ -1245,10 +1245,10 @@
    "refCpi": 216.1395,
    "name": "2.125% TIPS of February 2040",
    "issued": "2010",
-   "indexRatio": 1.55074,
-   "price": 92.71875,
-   "dirty": 0.931865,
-   "ytm": 2.784
+   "indexRatio": 1.55104,
+   "price": 92.1875,
+   "dirty": 0.92661,
+   "ytm": 2.835
   },
   {
    "cusip": "912810QP6",
@@ -1259,10 +1259,10 @@
    "refCpi": 218.991,
    "name": "2.125% TIPS of February 2041",
    "issued": "2011",
-   "indexRatio": 1.53055,
-   "price": 91.625,
-   "dirty": 0.920927,
-   "ytm": 2.842
+   "indexRatio": 1.53085,
+   "price": 91.09375,
+   "dirty": 0.915673,
+   "ytm": 2.89
   },
   {
    "cusip": "912810QV3",
@@ -1273,10 +1273,10 @@
    "refCpi": 225.96062,
    "name": "0.750% TIPS of February 2042",
    "issued": "2012",
-   "indexRatio": 1.48334,
-   "price": 73.421875,
-   "dirty": 0.73587,
-   "ytm": 2.918
+   "indexRatio": 1.48363,
+   "price": 72.90625,
+   "dirty": 0.730734,
+   "ytm": 2.968
   },
   {
    "cusip": "912810RA8",
@@ -1287,10 +1287,10 @@
    "refCpi": 229.911,
    "name": "0.625% TIPS of February 2043",
    "issued": "2013",
-   "indexRatio": 1.45785,
-   "price": 70.0625,
-   "dirty": 0.702001,
-   "ytm": 2.954
+   "indexRatio": 1.45814,
+   "price": 69.53125,
+   "dirty": 0.696705,
+   "ytm": 3.005
   },
   {
    "cusip": "912810RF7",
@@ -1301,10 +1301,10 @@
    "refCpi": 233.059,
    "name": "1.375% TIPS of February 2044",
    "issued": "2014",
-   "indexRatio": 1.43816,
-   "price": 78.296875,
-   "dirty": 0.785995,
-   "ytm": 2.992
+   "indexRatio": 1.43844,
+   "price": 77.6875,
+   "dirty": 0.779939,
+   "ytm": 3.045
   },
   {
    "cusip": "912810RL4",
@@ -1315,10 +1315,10 @@
    "refCpi": 235.4815,
    "name": "0.750% TIPS of February 2045",
    "issued": "2015",
-   "indexRatio": 1.42336,
-   "price": 68.234375,
-   "dirty": 0.683995,
-   "ytm": 3.024
+   "indexRatio": 1.42364,
+   "price": 67.671875,
+   "dirty": 0.67839,
+   "ytm": 3.075
   },
   {
    "cusip": "912810RR1",
@@ -1329,10 +1329,10 @@
    "refCpi": 236.94448,
    "name": "1.000% TIPS of February 2046",
    "issued": "2016",
-   "indexRatio": 1.41458,
-   "price": 70.4375,
-   "dirty": 0.706576,
-   "ytm": 3.037
+   "indexRatio": 1.41485,
+   "price": 69.84375,
+   "dirty": 0.700666,
+   "ytm": 3.087
   },
   {
    "cusip": "912810RW0",
@@ -1343,10 +1343,10 @@
    "refCpi": 241.3925,
    "name": "0.875% TIPS of February 2047",
    "issued": "2017",
-   "indexRatio": 1.38851,
-   "price": 67.28125,
-   "dirty": 0.674738,
-   "ytm": 3.05
+   "indexRatio": 1.38878,
+   "price": 66.703125,
+   "dirty": 0.668981,
+   "ytm": 3.099
   },
   {
    "cusip": "912810SB5",
@@ -1357,10 +1357,10 @@
    "refCpi": 246.5965,
    "name": "1.000% TIPS of February 2048",
    "issued": "2018",
-   "indexRatio": 1.35921,
-   "price": 68.0,
-   "dirty": 0.682201,
-   "ytm": 3.056
+   "indexRatio": 1.35947,
+   "price": 67.390625,
+   "dirty": 0.676135,
+   "ytm": 3.106
   },
   {
    "cusip": "912810SG4",
@@ -1371,10 +1371,10 @@
    "refCpi": 251.6355,
    "name": "1.000% TIPS of February 2049",
    "issued": "2019",
-   "indexRatio": 1.33199,
-   "price": 67.0,
-   "dirty": 0.672201,
-   "ytm": 3.052
+   "indexRatio": 1.33225,
+   "price": 66.375,
+   "dirty": 0.665978,
+   "ytm": 3.101
   },
   {
    "cusip": "912810SM1",
@@ -1385,10 +1385,10 @@
    "refCpi": 257.09503,
    "name": "0.250% TIPS of February 2050",
    "issued": "2020",
-   "indexRatio": 1.3037,
-   "price": 53.375,
-   "dirty": 0.5343,
-   "ytm": 3.066
+   "indexRatio": 1.30396,
+   "price": 52.828125,
+   "dirty": 0.528838,
+   "ytm": 3.114
   },
   {
    "cusip": "912810SV1",
@@ -1399,10 +1399,10 @@
    "refCpi": 260.3515,
    "name": "0.125% TIPS of February 2051",
    "issued": "2021",
-   "indexRatio": 1.2874,
-   "price": 50.015625,
-   "dirty": 0.500431,
-   "ytm": 3.056
+   "indexRatio": 1.28765,
+   "price": 49.484375,
+   "dirty": 0.495122,
+   "ytm": 3.102
   },
   {
    "cusip": "912810TE8",
@@ -1413,10 +1413,10 @@
    "refCpi": 278.375,
    "name": "0.125% TIPS of February 2052",
    "issued": "2022",
-   "indexRatio": 1.20404,
-   "price": 48.65625,
-   "dirty": 0.486838,
-   "ytm": 3.055
+   "indexRatio": 1.20428,
+   "price": 48.109375,
+   "dirty": 0.481372,
+   "ytm": 3.102
   },
   {
    "cusip": "912810TP3",
@@ -1427,10 +1427,10 @@
    "refCpi": 297.254,
    "name": "1.500% TIPS of February 2053",
    "issued": "2023",
-   "indexRatio": 1.12757,
-   "price": 71.875,
-   "dirty": 0.722052,
-   "ytm": 3.066
+   "indexRatio": 1.12779,
+   "price": 71.171875,
+   "dirty": 0.715061,
+   "ytm": 3.114
   },
   {
    "cusip": "912810TY4",
@@ -1441,10 +1441,10 @@
    "refCpi": 306.90376,
    "name": "2.125% TIPS of February 2054",
    "issued": "2024",
-   "indexRatio": 1.09212,
-   "price": 82.65625,
-   "dirty": 0.83124,
-   "ytm": 3.068
+   "indexRatio": 1.09233,
+   "price": 81.890625,
+   "dirty": 0.823641,
+   "ytm": 3.115
   },
   {
    "cusip": "912810UH9",
@@ -1455,10 +1455,10 @@
    "refCpi": 315.549,
    "name": "2.375% TIPS of February 2055",
    "issued": "2025",
-   "indexRatio": 1.0622,
-   "price": 87.0625,
-   "dirty": 0.875853,
-   "ytm": 3.062
+   "indexRatio": 1.06241,
+   "price": 86.265625,
+   "dirty": 0.867948,
+   "ytm": 3.108
   },
   {
    "cusip": "912810US5",
@@ -1469,10 +1469,10 @@
    "refCpi": 324.088,
    "name": "2.375% TIPS of February 2056",
    "issued": "2026",
-   "indexRatio": 1.03421,
-   "price": 87.125,
-   "dirty": 0.876478,
-   "ytm": 3.042
+   "indexRatio": 1.03441,
+   "price": 86.296875,
+   "dirty": 0.868261,
+   "ytm": 3.089
   }
  ]
 }
